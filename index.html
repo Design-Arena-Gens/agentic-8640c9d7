@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <title>Aqua Buddy - Water Reminder</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/water.svg" type="image/svg+xml" />
+  <meta name="description" content="Tiny PWA water reminder chatbot" />
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <img src="/icons/water.svg" alt="Aqua Buddy" class="logo" />
+      <div>
+        <h1>Aqua Buddy</h1>
+        <p class="tag">Tiny water reminder chatbot</p>
+      </div>
+    </header>
+
+    <section class="chat" id="chat"></section>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input id="message" type="text" inputmode="text" placeholder="Say 'start', 'stop', 'drink 250', 'set 20'..." aria-label="Message" />
+      <button type="submit" aria-label="Send">Send</button>
+    </form>
+
+    <details class="controls">
+      <summary>Quick controls</summary>
+      <div class="controls__grid">
+        <label>
+          Interval (minutes)
+          <input id="interval" type="number" min="5" step="5" value="30" />
+        </label>
+        <label>
+          Goal (ml)
+          <input id="goal" type="number" min="500" step="100" value="2000" />
+        </label>
+        <div class="btns">
+          <button id="startBtn" type="button">Start</button>
+          <button id="stopBtn" type="button" class="ghost">Stop</button>
+        </div>
+      </div>
+    </details>
+
+    <footer class="foot">
+      <span>Installable PWA. Works offline.</span>
+    </footer>
+  </main>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
